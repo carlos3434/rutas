@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        type: 'GET',
+        url: "apache.php",
+        //data: data,
+        dataType: "json",
+        contentType: 'application/json; charset=utf-8',
+        beforeSend: function(){
+            //$("#csstbusca").html("<p align='center'><img src='../../images/ajax-loader3.gif' /></p>");
+        },
+        error: function(){
+            alert("error petición ajax");
+        },
+        success: function(response){
+          //  resumen_table(response.resumen);
+          //  detalle_table(response.data);
+          //  paginacion(response.paginate);
+        }
+    });
+});
+</script>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
